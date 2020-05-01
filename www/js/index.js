@@ -5,18 +5,18 @@ window.onload = function() {
 
 function init() {
     document.getElementById('btnRegister').addEventListener('click', registerCourse, true);
-    document.getElementById('btnDisplay').addEventListener('click', displayRegisteredCourses, true);
-    document.getElementById('btnClea').addEventListener('click', clearRegisteredCourses, true);
+    document.getElementById('btnDisplay').addEventListener('click', displayList, true);
+    document.getElementById('btnClear').addEventListener('click', clearList, true);
 }
 
 function registerCourse(){
 
 }
 
-function displayRegisteredCourses(){
+function displayList(){
 
 }
 
-function clearRegisteredCourses() {
-    
+function clearList() {
+
 }
