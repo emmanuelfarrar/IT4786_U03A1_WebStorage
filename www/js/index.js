@@ -33,6 +33,9 @@ function registerCourse(){
 
         store.set(courseID.value, regDate.value);
 
+        output = "Thank you for registering for <br><br> "+ courseID.value + " on " + regDate.value ;  
+        document.getElementById('showInfo').innerHTML = output;
+
         courseID.value = "";
         regDate.value = "";
 }
@@ -43,7 +46,7 @@ function registerCourse(){
  * set <div id=showInfo> .innerHTML to output
  */
 function displayList(){
-    output = "";
+    output = "These are the courses for which you registered and their registration dates: <br><br>";
     store.each(function(val, key) {
        output += key + " registered on " + val +"<br>" ;
        document.getElementById('showInfo').innerHTML = output;
@@ -57,6 +60,6 @@ function displayList(){
  */
 function clearList() {
     store.clearAll();
-    output = "All course registration are removed";
+    output = "All course registration are removed.";
     document.getElementById('showInfo').innerHTML = output;
 }
