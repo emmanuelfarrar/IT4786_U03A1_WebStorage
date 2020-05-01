@@ -18,16 +18,23 @@ function init() {
 /** registerCourse()
  * makes objects from inout tags.
  * sets the object values to webstorage using store.js library
- * clears the values of the inputs
+ * clears the values of the inputs\
+ * Added: if/else statements to add basic validation 
  */
 function registerCourse(){
-    var courseID = document.getElementById('courseid');
-    var regDate = document.getElementById('date');
 
-    store.set(courseID.value, regDate.value);
+    if (document.getElementById('courseid').value == "" || null ) {
+        alert("Please input a valid course ID.");
+    } else if (document.getElementById('date').value == "") {
+        alert("Please input a valid registration date.");
+    } else
+        var courseID = document.getElementById('courseid');
+        var regDate = document.getElementById('date');
 
-    courseID.value = "";
-    regDate.value = "";
+        store.set(courseID.value, regDate.value);
+
+        courseID.value = "";
+        regDate.value = "";
 }
 
 /** displayList()
@@ -37,7 +44,7 @@ function registerCourse(){
  */
 function displayList(){
     output = "";
-    store.each(function(key, val) {
+    store.each(function(val, key) {
        output += key + " registered on " + val +"<br>" ;
        document.getElementById('showInfo').innerHTML = output;
     });
