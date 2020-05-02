@@ -2,7 +2,7 @@
 //function that runs onload
 window.onload = function() {
     this.document.addEventListener('deviceready', init, false);
-    init();     //delete to run in emulator or mobile app
+    //init();     //delete to run in emulator or mobile app
 }
 
 //global variables
